@@ -1,17 +1,17 @@
 #include<stdio.h>
 
 /**
- * main - what is that betty hummmm
+ * main - enter
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	char ch;
+	int i;
 
-	for (ch = 'a' ; ch <= 'z' ; ch++)
+	for (i = 48 ; i < 58 ; i++)
 	{
-		putchar(ch);
+		putchar(i);
 	}
 	putchar('\n');
 	return (0);
