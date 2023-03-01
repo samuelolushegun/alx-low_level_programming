@@ -11,7 +11,7 @@ void times_table(void)
 
 	for (i = 0 ; i <= 9 ; i++)
 	{
-		for (j = 0 ; j <= 8 ; j++)
+		for (j = 0 ; j <= 9 ; j++)
 		{
 			x = i * j;
 			if (j == 0)
