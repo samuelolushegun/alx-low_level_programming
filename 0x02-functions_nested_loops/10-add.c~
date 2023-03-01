@@ -1,0 +1,24 @@
+#include "main.h"
+
+/**
+ * add - adds two int
+ *@x: first parameter
+ *@y: seconde parameter
+ *
+ *Return: addition of two parameters
+ */
+int add(int x, int y)
+{
+	int n = x + y;
+
+	if (n < 10)
+	{
+		_putchar(n + '0');
+	}
+	else
+	{
+		_putchar((n / 10) + '0');
+		_putchar((n % 10) + '0');
+	}
+	_putchar('\n');
+}
