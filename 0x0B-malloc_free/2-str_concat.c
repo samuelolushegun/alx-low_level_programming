@@ -22,7 +22,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		a1 = (char *)malloc(sizeof(char) * (strlen(s1) + 1));
+		a1 = (char *)malloc(sizeof(char) * strlen(s1));
 		strcpy(a1, s1);
 	}
 	if (s2 == NULL)
@@ -32,7 +32,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		a2 = (char *)malloc(sizeof(char) * (strlen(s2) + 1));
+		a2 = (char *)malloc(sizeof(char) * strlen(s2));
 		strcpy(a2, s2);
 	}
 	a = (char *)malloc(sizeof(char) * (strlen(a1) + strlen(a2) + 1));
