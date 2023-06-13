@@ -12,28 +12,36 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	char *a2, *a;
-	unsigned long int i;
+	char *a;
+	int i, a1, a2;
 
 	if (s1 == NULL)
-		s1[0] = '\0';
-	if (s2 == NULL)
 	{
-		a2 = (char *)malloc(sizeof(char));
-		a2[0] = '\0';
+		s1[0] = '\0';
+		a1 = 0;
 	}
 	else
+		a1 = strlen(s1);
+	if (s2 == NULL)
 	{
-		a2 = (char *)malloc(sizeof(char) * strlen(s2));
-		strcpy(a2, s2);
+		s2[0] = '\0';
+		a2 = 0;
 	}
-	a = (char *)malloc(sizeof(char) * (strlen(s1) + strlen(a2) + 1));
+	else
+		a2 = strlen(s2);
+	a = (char *)malloc(sizeof(char) * (a1 + a2 + 1));
 	if (a == NULL)
 		return (NULL);
-	for (i = 0; i < strlen(s1); i++)
-		a[i] = s1[i];
-	for (i = strlen(s1); i < (strlen(s1) + strlen(a2)); i++)
-		a[i] = a2[(i - strlen(s1))];
+	if (s1 != NULL)
+	{
+		for (i = 0; i < a1; i++)
+			a[i] = s1[i];
+	}
+	if (s2 != NULL)
+	{
+		for (i = a1; i < (a1 + a2); i++)
+			a[i] = s2[(i - a1)];
+	}
 	a[i] = '\0';
 	return (a);
 }
