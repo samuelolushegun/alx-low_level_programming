@@ -43,7 +43,5 @@ char *str_concat(char *s1, char *s2)
 	for (i = strlen(a1); i < (strlen(a1) + strlen(a2)); i++)
 		a[i] = a2[(i - strlen(a1))];
 	a[i] = '\0';
-	free(a1);
-	free(a2);
 	return (a);
 }
