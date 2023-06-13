@@ -12,19 +12,11 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	char *a1, *a2, *a;
+	char *a2, *a;
 	unsigned long int i;
 
 	if (s1 == NULL)
-	{
-		a1 = (char *)malloc(sizeof(char));
-		a1[0] = '\0';
-	}
-	else
-	{
-		a1 = (char *)malloc(sizeof(char) * strlen(s1));
-		strcpy(a1, s1);
-	}
+		s1[0] = '\0';
 	if (s2 == NULL)
 	{
 		a2 = (char *)malloc(sizeof(char));
@@ -35,13 +27,13 @@ char *str_concat(char *s1, char *s2)
 		a2 = (char *)malloc(sizeof(char) * strlen(s2));
 		strcpy(a2, s2);
 	}
-	a = (char *)malloc(sizeof(char) * (strlen(a1) + strlen(a2) + 1));
+	a = (char *)malloc(sizeof(char) * (strlen(s1) + strlen(a2) + 1));
 	if (a == NULL)
 		return (NULL);
-	for (i = 0; i < strlen(a1); i++)
-		a[i] = a1[i];
-	for (i = strlen(a1); i < (strlen(a1) + strlen(a2)); i++)
-		a[i] = a2[(i - strlen(a1))];
+	for (i = 0; i < strlen(s1); i++)
+		a[i] = s1[i];
+	for (i = strlen(s1); i < (strlen(s1) + strlen(a2)); i++)
+		a[i] = a2[(i - strlen(s1))];
 	a[i] = '\0';
 	return (a);
 }
