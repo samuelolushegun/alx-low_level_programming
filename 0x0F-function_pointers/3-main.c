@@ -26,13 +26,11 @@ int main(int argc, char *argv[])
 		printf("Error2\n");
 		return (99);
 	}
-	if ((strcmp(argv[2], "/") == 0 || (strcmp(argv[2], "%") == 0)))
+	if ((strcmp(argv[2], "/") == 0 || (strcmp(argv[2], "%") == 0)) &&
+	    (atoi(argv[3]) == 0))
 	{
-		if (atoi(argv[3]) == 0)
-		{
-			printf("Error3\n");
-			return (100);
-		}
+		printf("Error3\n");
+		return (100);
 	}
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
