@@ -18,18 +18,18 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Error1\n");
+		printf("Error\n");
 		return (98);
 	}
 	if (get_op_func(argv[2]) == NULL)
 	{
-		printf("Error2\n");
+		printf("Error\n");
 		return (99);
 	}
 	if ((strcmp(argv[2], "/") == 0 || (strcmp(argv[2], "%") == 0)) &&
 	    (atoi(argv[3]) == 0))
 	{
-		printf("Error3\n");
+		printf("Error\n");
 		return (100);
 	}
 	a = atoi(argv[1]);
