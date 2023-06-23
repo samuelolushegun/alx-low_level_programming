@@ -4,6 +4,21 @@
 #include "variadic_functions.h"
 
 /**
+ * str_nil - prints string or (nil)
+ * @s: string
+ *
+ * Return: nothing.
+ */
+
+void str_nil(char *s)
+{
+	if (s == NULL)
+		printf("(nil)");
+	else
+		printf("%s", s);
+}
+
+/**
  * print_all - prints anything
  * @format: list of types of arguments passed to the function
  *
@@ -49,19 +64,4 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
 	va_end(a);
-}
-
-/**
- * str_nil - print string or (nil)
- * @s: strint that will be test
- *
- * Return: Nothing.
- */
-
-void str_nil(char *s)
-{
-	if (s == NULL)
-		printf("nill");
-	else
-		printf("%s", s);
 }
