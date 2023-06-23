@@ -14,6 +14,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int long i = 0;
 	va_list a;
+	int flag = 0;
 
 	va_start(a, format);
 	if (format == NULL)
@@ -24,20 +25,25 @@ void print_all(const char * const format, ...)
 		{
 		case 'c':
 			printf("%c", va_arg(a, int));
+			flag = 1;
 			break;
 		case 'i':
 			printf("%d", va_arg(a, int));
+			flag = 1;
 			break;
 		case 'f':
 			printf("%f", va_arg(a, double));
+			flag = 1;
 			break;
 		case 's':
 			str_nil(va_arg(a, char *));
+			flag = 1;
 			break;
 		default:
+			flag = 0;
 			break;
 		}
-		if (i < (strlen(format) - 1))
+		if (i < (strlen(format) - 1) && flag == 1)
 			printf(", ");
 		i++;
 	}
