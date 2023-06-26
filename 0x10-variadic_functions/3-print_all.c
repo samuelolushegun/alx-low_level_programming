@@ -35,7 +35,10 @@ void print_all(const char * const format, ...)
 
 	va_start(a, format);
 	if (format == NULL)
+	{
+		printf("\n");
 		return;
+	}
 	while (i < strlen(format))
 	{
 		switch (*(format + i))
