@@ -12,9 +12,11 @@
 
 void str_nil(char *s)
 {
-	while (s == NULL);
+	while (s == NULL)
+	{
 		printf("(nil)");
 		return;
+	}
 	printf("%s", s);
 }
 
