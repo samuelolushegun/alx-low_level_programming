@@ -1,0 +1,1 @@
+This folder contain code about some bitwise and bit manipulation
