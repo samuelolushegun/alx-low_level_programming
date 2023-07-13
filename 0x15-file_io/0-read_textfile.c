@@ -32,13 +32,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	r_letters = read(fp, buffer, letters);
 	if (r_letters == -1)
 	{
+		close(fp);
 		free(buffer);
 		return (0);
 	}
 
 	w_letters = write(STDOUT_FILENO, buffer, letters);
-	if (w_letters == -1 || (size_t)w_letters != letters)
+	if (w_letters == -1 || w_letters != r_letters)
 	{
+		close(fp);
 		free(buffer);
 		return (0);
 	}
