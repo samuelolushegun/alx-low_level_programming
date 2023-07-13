@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <string.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -16,6 +17,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fp;
 	char *buffer;
+	size_t len;
 	ssize_t r_letters, w_letters;
 
 	buffer = malloc(sizeof(char) * letters);
@@ -36,6 +38,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buffer);
 		return (0);
 	}
+
+	len = strlen(buffer);
+	if (len < letters)
+		letters = len;
 
 	w_letters = write(STDOUT_FILENO, buffer, letters);
 	if (w_letters == -1)
