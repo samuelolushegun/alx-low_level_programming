@@ -15,10 +15,6 @@ size_t print_dlistint(const dlistint_t *h)
 	const dlistint_t *traverse_ptr;
 	size_t compteur_de_noeud = 0;
 
-	traverse_ptr = malloc(sizeof(dlistint_t));
-	if (traverse_ptr == NULL)
-		return (EXIT_FAILURE);
-
 	traverse_ptr = h;
 
 	while (traverse_ptr != NULL)
