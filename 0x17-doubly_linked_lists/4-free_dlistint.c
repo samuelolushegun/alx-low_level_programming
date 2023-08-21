@@ -10,20 +10,13 @@
 
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *tmp;
+	dlistint_t *curr_node = head;
+	dlistint_t *proch_node;
 
-	if (head == NULL)
-		return;
-
-	tmp = malloc(sizeof(dlistint_t));
-	if (!tmp)
-		return;
-
-	while (head != NULL)
+	while (curr_node != NULL)
 	{
-		tmp = head;
-		head = head->next;
-		free(tmp);
+		proch_node = curr_node->next;
+		free(curr_node);
+		curr_node = proch_node;
 	}
-	free(head);
 }
